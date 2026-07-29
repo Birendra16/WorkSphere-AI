@@ -1,6 +1,6 @@
 {
   "name": "worksphere-ai",
-  "private": "true",
+  "private": true,
   "version": "1.0.0",
   "workspaces": [
     "apps/*",
@@ -10,6 +10,32 @@
     "dev": "npm run dev --workspaces",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
-    "test": "npm run test --workspaces"
+    "typecheck": "npm run typecheck --workspaces",
+    "format": "prettier --write .",
+    "test": "npm run test --workspaces",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.6",
+    "typescript-eslint": "^8.65.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,md}": [
+      "prettier --write"
+    ],
+    "apps/client/**/*.{ts,tsx}": [
+      "eslint --fix --no-ignore"
+    ],
+    "apps/server/**/*.ts": [
+      "eslint --fix --no-ignore"
+    ]
   }
 }
