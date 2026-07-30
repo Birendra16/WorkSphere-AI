@@ -1,3 +1,5 @@
+import "@/config/env.js";
+
 export const authConfig = {
   accessSecret: process.env.JWT_ACCESS_SECRET!,
 

@@ -6,10 +6,11 @@ export function validate(schema: z.ZodType) {
     const result = schema.safeParse(req.body);
 
     if (!result.success) {
-      return res.status(400).json({
+      res.status(400).json({
         success: false,
         errors: z.treeifyError(result.error),
       });
+      return;
     }
 
     req.body = result.data;
