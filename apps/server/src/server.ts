@@ -1,10 +1,11 @@
 import { startServer } from "./app/startup.js";
 import { disconnectMongoDB } from "./infrastructure/database/index.js";
+import { logger } from "@/lib/logger.js";
 
 const server = await startServer();
 
 async function gracefulShutdown(signal: string) {
-  console.log(`${signal} received. Shutting down...`);
+  logger.info(`${signal} received. Shutting down...`);
 
   server.close(async () => {
     await disconnectMongoDB();
