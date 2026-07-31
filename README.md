@@ -38,6 +38,16 @@ The project is structured into iterative agile sprints, focusing on scalable arc
 - **Access Control:** Established comprehensive protected routing and authorization middleware for reliable user sessions.
 - **Observability & Resilience:** Integrated centralized, structured logging via Pino and a global error handling framework.
 
+### ✅ Sprint 2: Workspace
+
+- **Workspace Management:** Implemented complete workspace lifecycle operations including creation, retrieval, updating, and deletion with structured REST APIs.
+
+- **Role-Based Access Control:** Designed workspace permissions with Owner, Admin, and Member roles for secure team collaboration.
+
+- **Member Management:** Developed member invitation, role modification, and removal features to support dynamic workspace collaboration.
+
+- **Data Architecture:** Built scalable Mongoose schemas with relational user references, validation, and optimized workspace queries.
+
 ---
 
 # Folder Creation
