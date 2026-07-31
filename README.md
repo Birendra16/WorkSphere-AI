@@ -48,6 +48,18 @@ The project is structured into iterative agile sprints, focusing on scalable arc
 
 - **Data Architecture:** Built scalable Mongoose schemas with relational user references, validation, and optimized workspace queries.
 
+### ✅ Sprint 3: Project Management
+
+- **Full Project Lifecycle:** Implemented complete CRUD operations for projects scoped to workspaces with owner-only authorization for mutations.
+
+- **Advanced Querying:** Engineered a composable query layer supporting pagination, full-text search, multi-field sorting, and filtering by status and priority.
+
+- **Soft Delete Strategy:** Adopted a non-destructive soft delete pattern using `isDeleted` and `deletedAt` fields to preserve data integrity and enable future recovery workflows.
+
+- **Enum-Driven Modeling:** Defined `ProjectStatus` (active, archived, on_hold, completed) and `ProjectPriority` (low, medium, high, critical) enums for structured, type-safe data modeling.
+
+- **Nested REST Design:** Structured project endpoints as a nested resource under workspaces (`/workspaces/:workspaceId/projects`) for clean, hierarchical API design.
+
 ---
 
 # Folder Creation

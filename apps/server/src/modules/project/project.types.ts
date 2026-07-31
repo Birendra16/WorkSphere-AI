@@ -38,3 +38,21 @@ export interface IProjectQuery {
   sortedBy?: string;
   sortOrder?: "asc" | "desc";
 }
+
+export type ProjectFilter = {
+  workspace?: string;
+  isDeleted?: boolean;
+  status?: ProjectStatus;
+  priority?: ProjectPriority;
+
+  $or?: Array<{
+    name?: {
+      $regex: string;
+      $options: string;
+    };
+    description?: {
+      $regex: string;
+      $options: string;
+    };
+  }>;
+};
