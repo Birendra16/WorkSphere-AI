@@ -60,6 +60,14 @@ The project is structured into iterative agile sprints, focusing on scalable arc
 
 - **Nested REST Design:** Structured project endpoints as a nested resource under workspaces (`/workspaces/:workspaceId/projects`) for clean, hierarchical API design.
 
+### ✅ Sprint 4: Task Management
+
+- **Task Operations:** Implemented comprehensive task lifecycle management including creation, updates, and soft deletion.
+- **Project-Scoped Tasks:** Tasks are contextually bound to specific projects, ensuring organized collaboration under the `/projects/:projectId/tasks` resource hierarchy.
+- **Rich Querying & Filtering:** Engineered a powerful search and filter API supporting full-text search, filtering by status, priority, labels, and assignee, alongside robust pagination and sorting.
+- **User-Centric Views:** Added specialized routes for fetching a user's assigned tasks (`/tasks/my`), identifying overdue tasks (`/tasks/overdue`), and aggregating dashboard statistics (`/tasks/stats`).
+- **Access Control:** Integrated strict workspace membership validation, ensuring that only authorized users can view, assign, or mutate project tasks.
+
 ---
 
 # Folder Creation
