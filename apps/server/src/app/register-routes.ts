@@ -4,6 +4,7 @@ import authRoute from "../modules/auth/auth.route.js";
 import { workspaceRoutes } from "@/modules/workspace/index.js";
 import { projectRoutes } from "@/modules/project/index.js";
 import { projectTaskRoutes, userTaskRoutes } from "@/modules/task/index.js";
+import { taskCommentRoutes, directCommentRoutes } from "@/modules/comment/index.js";
 
 export function registerRoutes(app: Express) {
   app.use("/api/v1/health", healthRoute);
@@ -12,4 +13,6 @@ export function registerRoutes(app: Express) {
   app.use("/api/v1/workspaces/:workspaceId/projects", projectRoutes);
   app.use("/api/v1/projects/:projectId/tasks", projectTaskRoutes);
   app.use("/api/v1/tasks", userTaskRoutes);
+  app.use("/api/v1/tasks/:taskId/comments", taskCommentRoutes);
+  app.use("/api/v1/comments", directCommentRoutes);
 }

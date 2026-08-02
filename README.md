@@ -68,6 +68,13 @@ The project is structured into iterative agile sprints, focusing on scalable arc
 - **User-Centric Views:** Added specialized routes for fetching a user's assigned tasks (`/tasks/my`), identifying overdue tasks (`/tasks/overdue`), and aggregating dashboard statistics (`/tasks/stats`).
 - **Access Control:** Integrated strict workspace membership validation, ensuring that only authorized users can view, assign, or mutate project tasks.
 
+### ✅ Sprint 5: Comment Module
+
+- **Production Database Architecture:** Created a dedicated `comments` MongoDB collection with compound indexes (`{ task: 1, createdAt: -1 }`) for high-performance querying and pagination.
+- **Nested REST Endpoints:** Designed clean nested routes (`POST /tasks/:taskId/comments`, `GET /tasks/:taskId/comments`) and direct resource mutation endpoints (`PATCH /comments/:id`, `DELETE /comments/:id`).
+- **Authorization & Ownership:** Enforced workspace membership validation for reading/adding comments, and strict author-only permissions for updates and hard deletions.
+- **Relational Population:** Populates comment author metadata (`name`, `email`, `avatar`) for rich UI display.
+
 ---
 
 # Folder Creation
